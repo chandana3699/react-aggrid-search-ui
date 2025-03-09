@@ -7,6 +7,7 @@ import { Comment } from "../../models/comments"
 import "./SearchBar.css";
 
 const { Title } = Typography;
+//Env Access for Endpoint
 const COMMENTS_API_URL = import.meta.env.VITE_API_URL;
 
 // API call for fetching data
