@@ -22,8 +22,8 @@ global.window.matchMedia = global.window.matchMedia || (() => {
     });
   
     test("calls API and displays results on valid input", async () => {
-      // ✅ Mock fetch and cast as a jest.Mock for TypeScript
-      global.fetch = vi.fn() as jest.Mock;
+      // Mock fetch and cast as a jest.Mock for TypeScript
+      global.fetch = vi.fn() as unknown as jest.Mock;
       (global.fetch as jest.Mock).mockResolvedValueOnce({
         json: async () => [
           { id: 1, name: "Test User", email: "test@example.com", body: "Test Comment" },
@@ -43,7 +43,7 @@ global.window.matchMedia = global.window.matchMedia || (() => {
     });
   
     test("handles empty search results gracefully", async () => {
-      global.fetch = vi.fn() as jest.Mock;
+      global.fetch = vi.fn() as unknown as jest.Mock;
       (global.fetch as jest.Mock).mockResolvedValueOnce({
         json: async () => [],
       });
