@@ -1,0 +1,36 @@
+/* src/components/search/search.css */
+.search-container {
+    padding: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .header-container {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #d9d9d9;
+    border-radius: 8px;
+    background: #fafafa;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .table-container {
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .alert-align {
+    margin-bottom: 20px;
+  }
+
+  .title-align {
+    margin: 0;
+    font-size: 18px!important;
+  }
+  
+  .input-align {
+    width: 300px;
+    margin-right: 10px;
+  }
+  
