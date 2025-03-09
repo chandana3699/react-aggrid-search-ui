@@ -4,11 +4,12 @@ import debounce from "lodash.debounce";
 import "antd/dist/reset.css";
 
 const { Title } = Typography;
-
+const API_URL = import.meta.env.VITE_API_URL;
 // API call for fetching data
 const fetchComments = async (query: string) => {
   try {
-    const response = await fetch(`https://jsonplaceholder.typicode.com/comments?q=${query}`);
+    // const response = await fetch(`https://jsonplaceholder.typicode.com/comments?q=${query}`);
+    const response = await fetch(`${API_URL}?q=${query}`);
     if (!response.ok) throw new Error("Failed to fetch results");
     return await response.json();
   } catch (error) {
