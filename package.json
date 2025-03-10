@@ -12,6 +12,7 @@
     "test:watch": "vitest --watch"
   },
   "dependencies": {
+    "@ag-grid-community/client-side-row-model": "^32.3.3",
     "@testing-library/dom": "^10.4.0",
     "ag-grid-community": "^33.1.1",
     "ag-grid-react": "^33.1.1",
@@ -19,7 +20,8 @@
     "bootstrap": "^5.3.3",
     "lodash.debounce": "^4.0.8",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "xlsx": "^0.18.5"
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",

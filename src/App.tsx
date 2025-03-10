@@ -3,7 +3,7 @@ import SearchBar from "./components/search/SearchBar"; {/* Import Search Page */
 
 const App: React.FC = () => {
   return (
-    <div className="container mt-4">
+    <div>
       <SearchBar/> {/* Rendering Search Page */}
     </div>
   );
