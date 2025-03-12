@@ -1,9 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import { Input, Button, Space } from "antd";
 import { SearchOutlined, DownloadOutlined } from "@ant-design/icons";
-import { debounceSearch, throttleDownload } from "../../Slot/debounce";
+import { debounce } from "lodash";
+import { throttleDownload } from "../../Slot/debounce";
 import "./SearchBar.css";
-import debounce from "lodash.debounce"; 
 
 const { Search } = Input;
 
@@ -15,30 +15,40 @@ interface SearchBarProps {
 const SearchBar: React.FC<SearchBarProps> = ({ onSearch, onDownload }) => {
   const [searchText, setSearchText] = useState("");
 
-  // Function to handle search click with debounce
- 
+  // Debounced function for search
+  const debouncedSearch = useCallback(
+    debounce((value: string) => {
+      if (value.length >= 3) {
+        onSearch(value);
+      }
+    }, 500),
+    [onSearch] // Ensure debounce always uses latest onSearch
+  );
 
-  const debouncedSearch = debounce((value) => {
-    if (value.length >= 3) {
-      onSearch(value);
-    }
-  }, 500); // 500ms delay
-  
- 
-  
+  // Handle input change (debounced search)
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const value = e.target.value;
+    setSearchText(value);
+    debouncedSearch(value); // Trigger debounced search
+  };
 
   return (
     <div className="search-container">
       <Search
-      placeholder="Type To Search..."
-      value={searchText}
-      onChange={(e) => {
-        setSearchText(e.target.value);
-        debouncedSearch(e.target.value);
-      }}
-      enterButton={<SearchOutlined />}
-      className="search-input w-25"
-    />
+        placeholder="Type to Search..."
+        value={searchText}
+        onChange={handleInputChange} // Debounced search on change
+        enterButton={
+          <Button 
+            type="primary" 
+            icon={<SearchOutlined />} 
+            onClick={() => onSearch(searchText)} // Immediate search on button click
+          >
+            Search
+          </Button>
+        }
+        className="search-input w-25"
+      />
       <Space className="button-group">
         <Button
           type="default"
