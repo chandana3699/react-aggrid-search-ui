@@ -12,14 +12,17 @@
   margin-top: 10px;
   margin-right: 4px;
   margin-bottom: 10px;
+  background-color: #213c77;
 }
 
 .button-group {
   display: flex;
   gap: 10px;
+  margin-right: 100px!important;
 }
 
 .button-download {
-  background: #213c77;
-  color: #ffffff;
+  background: #f7f8fa;
+  color: #213c77;
+  font-weight: 400;
 }

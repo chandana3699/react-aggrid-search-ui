@@ -1,13 +1,13 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Header from "./components/Header/Header";
-import SearchPage from "./Pages/SearchPage";
+import SearchPage from "./Pages/SearchPage/SearchPage";
 import Footer from "./components/Footer/Footer";
 import "./App.css";
 
 const App: React.FC = () => {
   return (
-    <div className="banner-img">
+    <div className="banner-img1">
       <Router>
         <Header />
         <Routes>

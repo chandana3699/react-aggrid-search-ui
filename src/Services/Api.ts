@@ -18,3 +18,20 @@ export const fetchUsers = async (query = ""): Promise<User[]> => {
     throw new Error("Failed to fetch users.");
   }
 };
+
+export const fetchUsersFilter = async (query = ""): Promise<User[]> => {
+  try {
+    if (query.length < 3) return []; // Ensure search is meaningful
+
+    const response = await axios.get(`${API_URL}?q=${query}`); // API call with search param
+    return response.data.slice(0, 20).map((user: any) => ({
+      id: user.id,
+      name: user.name,
+      email: user.email,
+      body: user.body.length > 64 ? user.body.slice(0, 64) + "..." : user.body, // Truncate body
+    }));
+  } catch (error) {
+    console.error("Error fetching users:", error);
+    return [];
+  }
+};

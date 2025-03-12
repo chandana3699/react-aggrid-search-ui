@@ -1,13 +1,13 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { HomeOutlined, DashboardOutlined, AppstoreOutlined, UserOutlined, QuestionCircleFilled, QuestionCircleOutlined } from "@ant-design/icons";
+import { HomeOutlined, DashboardOutlined, AppstoreOutlined, QuestionCircleOutlined, DingdingOutlined } from "@ant-design/icons";
 import "./Header.css";
 
 const Header: React.FC = () => {
   return (
     <nav className="navbar">
-      <div className="logo">
-        <span className="logo-icon">🅱</span>
+      <div className="logos" style={{ display: "inline-block"}}>
+        <span className="logo-icon" style={{marginLeft: "20px"}}><DingdingOutlined /><h4>Employee Info</h4></span>
       </div>
       <ul className="nav-links">
         <li>

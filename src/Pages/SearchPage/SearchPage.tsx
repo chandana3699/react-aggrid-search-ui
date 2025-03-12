@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { notification } from "antd";
-import SearchBar from "../components/Search/SearchBar";
-import UserTable from "../components/Table/Table";
-import { fetchUsers } from "../Services/Api";
-import { User } from "../models/userModel";
+import SearchBar from "../../components/Search/SearchBar";
+import UserTable from "../../components/Table/Table";
+import { fetchUsers, fetchUsersFilter } from "../../Services/Api";
+import { User } from "../../models/userModel";
 import * as XLSX from "xlsx";
+import "./SearchPage.css";
 
 const SearchPage: React.FC = () => {
   const [users, setUsers] = useState<User[]>([]);
@@ -24,16 +25,16 @@ const SearchPage: React.FC = () => {
   const handleSearch = async (query: string) => {
     setLoading(true);
     const trimmedQuery = query.trim();
-
-    if (trimmedQuery.length === 0) {
-      await loadDefaultUsers(); // Reload default users when input is empty
+  
+    if (trimmedQuery.length < 3) {
+      await loadDefaultUsers(); // Show default users when query < 3 characters
     } else {
-      const result = await fetchUsers(trimmedQuery);
+      const result = await fetchUsersFilter(trimmedQuery); // Use API filtering
       setUsers(result);
     }
-
     setLoading(false);
   };
+  
 
   const handleDownload = () => {
     if (users.length === 0) {
@@ -58,7 +59,7 @@ const SearchPage: React.FC = () => {
   };
 
   return (
-    <div className="banner-img1">
+    <div className="banner-img">
       <SearchBar 
         onSearch={handleSearch} 
         onDownload={handleDownload} 
