@@ -21,7 +21,7 @@ const UserTable: React.FC<TableProps> = ({ data, loading }) => {
   ];
 
   return (
-    <Card className="table-container">
+    // <Card className="table-container">
       <Table
         columns={columns}
         dataSource={data}
@@ -39,7 +39,7 @@ const UserTable: React.FC<TableProps> = ({ data, loading }) => {
           rowExpandable: (record) => !!record.body, // Expand only if 'body' exists
         }}
       />
-    </Card>
+    // </Card>
   );
 };
 
