@@ -17,24 +17,23 @@ const SearchPage: React.FC = () => {
 
   const loadDefaultUsers = async () => {
     setLoading(true);
-    const result = await fetchUsers(""); // Fetch default users
-    setUsers(result.slice(0, 20)); // Limit to 20 users
+    const result = await fetchUsers("");
+    setUsers(result.slice(0, 20)); // Always show 20 items
     setLoading(false);
   };
 
   const handleSearch = async (query: string) => {
     setLoading(true);
     const trimmedQuery = query.trim();
-  
+
     if (trimmedQuery.length < 3) {
-      await loadDefaultUsers(); // Show default users when query < 3 characters
+      await loadDefaultUsers();
     } else {
-      const result = await fetchUsersFilter(trimmedQuery); // Use API filtering
+      const result = await fetchUsersFilter(trimmedQuery);
       setUsers(result);
     }
     setLoading(false);
   };
-  
 
   const handleDownload = () => {
     if (users.length === 0) {
@@ -59,11 +58,8 @@ const SearchPage: React.FC = () => {
   };
 
   return (
-    <div className="banner-img">
-      <SearchBar 
-        onSearch={handleSearch} 
-        onDownload={handleDownload} 
-      />
+    <div className="search-page-container">
+      <SearchBar onSearch={handleSearch} onDownload={handleDownload} />
       <UserTable data={users} loading={loading} />
     </div>
   );

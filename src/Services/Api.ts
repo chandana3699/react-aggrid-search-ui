@@ -21,9 +21,9 @@ export const fetchUsers = async (query = ""): Promise<User[]> => {
 
 export const fetchUsersFilter = async (query = ""): Promise<User[]> => {
   try {
-    if (query.length < 3) return []; // Ensure search is meaningful
+    if (query.length < 3) return []; // Ensure search with character limit
 
-    const response = await axios.get(`${API_URL}?q=${query}`); // API call with search param
+    const response = await axios.get(`${API_URL}?q=${query}`); // API call with search parameters
     return response.data.slice(0, 20).map((user: any) => ({
       id: user.id,
       name: user.name,

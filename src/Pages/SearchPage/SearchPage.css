@@ -1,25 +1,8 @@
-.banner-img {
-    min-height: 100vh;
-    background: url('../../assets/banner-img.jpg');
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: cover;
-    position: relative;
-  }
-  
-  .banner-img::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    /* background: rgba(0, 0, 0, 0.5); Dark overlay */
-    background: rgb(38 91 226 / 40%);
-    /* background: #212529; */
-    z-index: 0;
-  }
-  
-  .Search-option{
-    background-color: blue!important;
-  }
+.search-page-container {
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 20px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}

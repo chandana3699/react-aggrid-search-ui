@@ -2,15 +2,20 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #213c77;
+  background: rgba(20,18,52,0.6) !important;
   padding: 10px 20px;
 }
 
-/* Logo Section */
 .logos {
   display: flex;
   align-items: center;
-  gap: 10px; /* Adds spacing between logo icon and text */
+  gap: 10px; 
+}
+
+.logos h4 {
+  font-size: 20px;
+  font-weight: 400;
+  margin-top: 10px;
 }
 
 .logo-icon {
@@ -18,67 +23,39 @@
   align-items: center;
   font-size: 24px;
   color: white;
-  gap: 8px; /* Space between icon and text */
+  gap: 8px; 
 }
 
 .logo-text {
   margin: 0;
-  font-size: 18px;
-  font-weight: bold;
+  font-size: 16px;
   color: white;
 }
 
-/* Navigation Links */
 .nav-links {
   display: flex;
   list-style: none;
   gap: 20px;
-  margin: 0; /* Removed margin-bottom */
+  margin: 0;
   padding: 0;
 }
 
 .nav-links li a {
   text-decoration: none;
   color: #ffffff;
-  font-size: 16px;
+  font-size: 14px;
   display: flex;
   align-items: center;
-  gap: 5px; /* Space between icon and text */
+  gap: 5px;
   padding: 5px 10px;
   transition: color 0.3s ease-in-out;
 }
 
 .nav-links li a:hover {
-  background-color: #213c77;
   color: white;
 }
 
 .nav-links li a.active {
   text-decoration: underline;
-  font-weight: bold;
-}
-
-/* Auth Buttons */
-.auth-buttons {
-  display: flex;
-  gap: 10px;
-}
-
-.auth-buttons button {
-  border: none;
-  padding: 6px 12px;
-  border-radius: 5px;
   font-size: 14px;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
 }
-
-.login-btn {
-  background: #f3f3f3;
-  color: #213c77;
-}
-
-.login-btn:hover {
-  background: #e0e0e0;
-}
-

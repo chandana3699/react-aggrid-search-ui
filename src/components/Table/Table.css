@@ -1,9 +1,16 @@
-.table-container {
-    margin: 20px;
-    padding: 20px;
-    background: rgb(154, 152, 152);
+  .table-container .ant-card-body {
+    padding-bottom: 0px!important;
+  }  
+
+  .table-container {
+    min-height: 450px; 
+    padding: 15px;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    margin-top: 40px;
+    margin-bottom: 200px;
+  }
+  
+  .ant-table-tbody > tr:hover {
+    background-color: #e6f7ff !important; 
   }
   
