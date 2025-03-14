@@ -4,6 +4,7 @@ import Header from "./components/Header/Header";
 import SearchPage from "./Pages/SearchPage/SearchPage";
 import Footer from "./components/Footer/Footer";
 import "./App.css";
+import "./index.css";
 
 const App: React.FC = () => {
   return (

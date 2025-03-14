@@ -7,28 +7,28 @@ const Header: React.FC = () => {
   return (
     <nav className="navbar">
       <div className="logos" style={{ display: "inline-block"}}>
-        <span className="logo-icon" style={{marginLeft: "20px"}}><DingdingOutlined /><h4>Employee Info</h4></span>
+        <span className="logo-icon" style={{marginLeft: "20px"}}><DingdingOutlined /><h4>EMPLOYEE INFO</h4></span>
       </div>
       <ul className="nav-links">
         <li>
           <NavLink to="/" activeClassName="active">
-            <HomeOutlined /> Home
+            <HomeOutlined /> HOME
           </NavLink>
         </li>
         <li>
           <NavLink to="/about">
-            <DashboardOutlined /> About
+            <DashboardOutlined /> ABOUT
           </NavLink>
         </li>
         <li>
           <NavLink to="/services">
-            <AppstoreOutlined /> Services
+            <AppstoreOutlined /> SERVICES
           </NavLink>
         </li>
       
         <li>
           <NavLink to="/help">
-            <QuestionCircleOutlined /> Help
+            <QuestionCircleOutlined /> HELP
           </NavLink>
         </li>
       </ul>
